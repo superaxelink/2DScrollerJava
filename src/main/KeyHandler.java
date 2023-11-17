@@ -8,8 +8,12 @@ public class KeyHandler implements KeyListener{
   
   GamePanel gp;
   public ArrayList<String> keys = new ArrayList<>();
-  public boolean upPressed, downPressed, leftPressed, rightPressed, spacePressed, attackPressed;
+  public boolean upPressed, downPressed, leftPressed, rightPressed, spacePressed, attackPressed, enterPressed;
   
+  public KeyHandler(GamePanel gp){
+    this.gp = gp;
+  }
+
   @Override
   public void keyPressed(KeyEvent e){
     int code =e.getKeyCode();
@@ -43,11 +47,20 @@ public class KeyHandler implements KeyListener{
       }
       spacePressed = true;
     }
+    if(code==KeyEvent.VK_ENTER){
+      if(!keys.contains("enter")){
+        keys.add("enter");
+      }
+      enterPressed = true;
+    }
     if(code==KeyEvent.VK_J){
       if(!keys.contains("attack")){
         keys.add("attack");
       }
       attackPressed = true;
+    }
+    if(code==KeyEvent.VK_H){
+      gp.drawHitBox = !gp.drawHitBox;
     }
   }
 
@@ -83,6 +96,12 @@ public class KeyHandler implements KeyListener{
         keys.remove("space");
       }
       spacePressed = false;
+    }
+    if(code==KeyEvent.VK_ENTER){
+      if(keys.contains("enter")){
+        keys.remove("enter");
+      }
+      enterPressed = false;
     }
     if(code==KeyEvent.VK_J){
       if(keys.contains("attack")){

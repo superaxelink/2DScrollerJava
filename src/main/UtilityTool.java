@@ -6,7 +6,29 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import entity.Entity;
+
 public class UtilityTool {
+
+  public boolean squareCollision(Entity obj1, Entity obj2){
+    if( obj2.yEndSquare <= obj1.y ){return false;} //bottom1 above top2
+    if(obj1.yEndSquare <= obj2.y ){return false;} //top1 below bottom2
+    if(obj1.xEndSquare <= obj2.xStartSquare){return false;} //right1 before left2
+    if( obj2.xEndSquare <= obj1.xStartSquare  ){return false;} //left1 past right2
+    //If none of the sides from A are outside B
+    return true;
+  }
+
+  public boolean squareCollision(int o1x1, int o1x2, int o1y1, int o1y2, 
+    int o2x1, int o2x2, int o2y1, int o2y2){
+    if(o2y2 <= o1y1){return false;} //bottom1 above top2
+    if(o1y2 <= o2y1 ){return false;} //top1 above bottom2
+    if(o1x2 <= o2x1){return false;} //right1 past left2
+    if(o2x2 <= o1x1 ){return false;} //left1 past right2
+    //If none of the sides from A are outside B
+    return true;
+  }
+
   //TO SCALE IMAGES BEFORE LOOP
   public BufferedImage scaleImage(BufferedImage original, int width, int height ){
 
@@ -30,7 +52,8 @@ public class UtilityTool {
       image = scaleImage(image, width, height);
 /*       System.out.println(image.getWidth() + " " + image.getHeight());s */
     } catch (Exception e) {
-      e.printStackTrace();
+      image = null;
+      /* e.printStackTrace(); */
     }
     return image;
   }

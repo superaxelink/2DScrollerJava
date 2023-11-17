@@ -27,10 +27,27 @@ public class Background extends BackgroundManager {
     image5 = setup("/background/layerCity5", width, height);
   }
   public void draw(Graphics2D g2){
-    g2.drawImage(image1, x, y, null);
-    g2.drawImage(image2, x, y, null);
-    g2.drawImage(image3, x, y, null);
-    g2.drawImage(image4, x, y, null);
-    g2.drawImage(image5, x, y, null);
+    g2.drawImage(image1, 0, 0, gp.screenWidth, gp.screenHeight, 
+    x , 0, x + gp.screenWidth, 0 + gp.screenHeight, null);
+    g2.drawImage(image2, 0, 0, gp.screenWidth, gp.screenHeight, 
+    x , 0, x + gp.screenWidth, 0 + gp.screenHeight, null);
+    g2.drawImage(image3, 0, 0, gp.screenWidth, gp.screenHeight, 
+    x , 0, x + gp.screenWidth, 0 + gp.screenHeight, null);
+    g2.drawImage(image4, 0, 0, gp.screenWidth, gp.screenHeight, 
+    x , 0, x + gp.screenWidth, 0 + gp.screenHeight, null);
+    g2.drawImage(image5, 0, 0, gp.screenWidth, gp.screenHeight, 
+    x , 0, x + gp.screenWidth, 0 + gp.screenHeight, null);
+  }
+
+  public void update(){
+    if(x+gp.screenWidth>=width){
+      x=0;
+    }else if(x<0){
+      x=gp.screenWidth;
+    }
+  }
+
+  public void reset(){
+    x=0;
   }
 }

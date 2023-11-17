@@ -8,9 +8,9 @@ public class Main {
         window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit the app when closing the window
         window.setResizable(false);
-        window.setTitle("Test Game");
+        window.setTitle("Monster fighter");
 
-        GamePanel gamePanel = new GamePanel();
+        GamePanel gamePanel = new GamePanel(window);
 
         window.add(gamePanel);
         //gamePanel.config.loadConfig();
@@ -19,6 +19,9 @@ public class Main {
         window.setVisible(true);
 
         gamePanel.startGameThread();
-        
+    }
+
+    public static void closeWindow() {
+        window.dispose(); // O window.setVisible(false);
     }
 }

@@ -13,12 +13,12 @@ public class BackgroundManager {
   GamePanel gp;
 
   //Dimensions
-  int width;
-  int height;
+  public int width;
+  public int height;
 
   //Coordinates
-  int x;
-  int y;
+  public int x;
+  public int y;
 
   //Properties
   public BufferedImage image1, image2, image3, image4, image5;
