@@ -1,19 +1,40 @@
-## Getting Started
+## 2D scroller game
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A 2d game developed purely in java to show my capabilities using the java code language.
 
-## Folder Structure
+Movement wasd
+Attack - j
 
-The workspace contains two folders by default, where:
+Kill monsters to get enough points to win before life goes off. 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Software requirements
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Java: OpenJDK versión 11 or higher.
+- JFrame.
+- Fpanel.
+- KeyEvent.
+- KeyListeied.
+- Graphics.
+- Graphics2D.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
+## Execution Instructions
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# 2DScrollerJava
+To run the game, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Open a terminal and navigate to the root directory of the project.
+3. Compile the project.
+
+Once the compilation is successful, run the game with the following command:
+
+bash
+
+java -jar target/your-application.jar
+
+Replace your-application.jar with the name of the generated JAR file.
+
+Enjoy playing the game!
+
+
+
